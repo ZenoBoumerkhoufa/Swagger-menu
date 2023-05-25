@@ -482,11 +482,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\boume\\OneDrive\\Documenten\\HOGENT\\Jaar_3\\Web 4\\EINDOPDRACHT\\Swagger-menu\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\boume\\OneDrive\\Bureaublad\\Swagger-menu\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\boume\\OneDrive\\Documenten\\HOGENT\\Jaar_3\\Web 4\\EINDOPDRACHT\\Swagger-menu\\API\\API.csproj",
+      "projectPath": "C:\\Users\\boume\\OneDrive\\Bureaublad\\Swagger-menu\\API\\API.csproj",
       "packagesPath": "C:\\Users\\boume\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\boume\\OneDrive\\Documenten\\HOGENT\\Jaar_3\\Web 4\\EINDOPDRACHT\\Swagger-menu\\API\\obj\\",
+      "outputPath": "C:\\Users\\boume\\OneDrive\\Bureaublad\\Swagger-menu\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -508,8 +508,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\boume\\OneDrive\\Documenten\\HOGENT\\Jaar_3\\Web 4\\EINDOPDRACHT\\Swagger-menu\\BusinessLayer\\BusinessLayer.csproj": {
-              "projectPath": "C:\\Users\\boume\\OneDrive\\Documenten\\HOGENT\\Jaar_3\\Web 4\\EINDOPDRACHT\\Swagger-menu\\BusinessLayer\\BusinessLayer.csproj"
+            "C:\\Users\\boume\\OneDrive\\Bureaublad\\Swagger-menu\\BusinessLayer\\BusinessLayer.csproj": {
+              "projectPath": "C:\\Users\\boume\\OneDrive\\Bureaublad\\Swagger-menu\\BusinessLayer\\BusinessLayer.csproj"
             }
           }
         }
@@ -552,7 +552,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
