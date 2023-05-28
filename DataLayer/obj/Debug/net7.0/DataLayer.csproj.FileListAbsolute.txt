@@ -13,3 +13,18 @@ C:\Users\boume\OneDrive\Documenten\HOGENT\Jaar_3\Web 4\EINDOPDRACHT\Swagger-menu
 C:\Users\boume\OneDrive\Documenten\HOGENT\Jaar_3\Web 4\EINDOPDRACHT\Swagger-menu\DataLayer\obj\Debug\net7.0\refint\DataLayer.dll
 C:\Users\boume\OneDrive\Documenten\HOGENT\Jaar_3\Web 4\EINDOPDRACHT\Swagger-menu\DataLayer\obj\Debug\net7.0\DataLayer.pdb
 C:\Users\boume\OneDrive\Documenten\HOGENT\Jaar_3\Web 4\EINDOPDRACHT\Swagger-menu\DataLayer\obj\Debug\net7.0\ref\DataLayer.dll
+C:\Users\boume\OneDrive\Bureaublad\Swagger-menu\DataLayer\bin\Debug\net7.0\DataLayer.deps.json
+C:\Users\boume\OneDrive\Bureaublad\Swagger-menu\DataLayer\bin\Debug\net7.0\DataLayer.dll
+C:\Users\boume\OneDrive\Bureaublad\Swagger-menu\DataLayer\bin\Debug\net7.0\DataLayer.pdb
+C:\Users\boume\OneDrive\Bureaublad\Swagger-menu\DataLayer\bin\Debug\net7.0\BusinessLayer.dll
+C:\Users\boume\OneDrive\Bureaublad\Swagger-menu\DataLayer\bin\Debug\net7.0\BusinessLayer.pdb
+C:\Users\boume\OneDrive\Bureaublad\Swagger-menu\DataLayer\obj\Debug\net7.0\DataLayer.csproj.AssemblyReference.cache
+C:\Users\boume\OneDrive\Bureaublad\Swagger-menu\DataLayer\obj\Debug\net7.0\DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\boume\OneDrive\Bureaublad\Swagger-menu\DataLayer\obj\Debug\net7.0\DataLayer.AssemblyInfoInputs.cache
+C:\Users\boume\OneDrive\Bureaublad\Swagger-menu\DataLayer\obj\Debug\net7.0\DataLayer.AssemblyInfo.cs
+C:\Users\boume\OneDrive\Bureaublad\Swagger-menu\DataLayer\obj\Debug\net7.0\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\boume\OneDrive\Bureaublad\Swagger-menu\DataLayer\obj\Debug\net7.0\DataLayer.csproj.CopyComplete
+C:\Users\boume\OneDrive\Bureaublad\Swagger-menu\DataLayer\obj\Debug\net7.0\DataLayer.dll
+C:\Users\boume\OneDrive\Bureaublad\Swagger-menu\DataLayer\obj\Debug\net7.0\refint\DataLayer.dll
+C:\Users\boume\OneDrive\Bureaublad\Swagger-menu\DataLayer\obj\Debug\net7.0\DataLayer.pdb
+C:\Users\boume\OneDrive\Bureaublad\Swagger-menu\DataLayer\obj\Debug\net7.0\ref\DataLayer.dll

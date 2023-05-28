@@ -1,10 +1,7 @@
-﻿using BusinessLayer.Interfaces;
+﻿using BusinessLayer.DTOS;
+using BusinessLayer.Interfaces;
+using BusinessLayer.Mappers;
 using BusinessLayer.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.Managers
 {
@@ -34,9 +31,9 @@ namespace BusinessLayer.Managers
         #endregion
 
         #region ADD
-        public void AddCustomer(Customer customer)
+        public void AddCustomer(CustomerDTO customer)
         {
-            _repo.AddCustomer(customer);
+            _repo.AddCustomer(CustomerMapper.MapToEntity(customer));
         }
         #endregion
 
@@ -44,13 +41,6 @@ namespace BusinessLayer.Managers
         public void UpdateCustomer(Customer customer)
         {
             _repo.UpdateCustomer(customer);
-        }
-        #endregion
-
-        #region DELETE
-        public void RemoveCustomer(Customer customer)
-        {
-            _repo.RemoveCustomer(customer);
         }
         #endregion
     }

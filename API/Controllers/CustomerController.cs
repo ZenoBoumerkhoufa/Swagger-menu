@@ -1,4 +1,6 @@
-﻿using BusinessLayer.Managers;
+﻿using BusinessLayer.DTOS;
+using BusinessLayer.Exceptions;
+using BusinessLayer.Managers;
 using BusinessLayer.Model;
 using DataLayer.Repositories;
 using Microsoft.AspNetCore.Mvc;
@@ -25,16 +27,18 @@ namespace API.Controllers
         {
             try
             {
-                List<Customer> list = _CustomerManager.GetAllCustomers();
-                if (list == null) return NotFound();
-                return Ok(list);
+                List<Customer> customers = _CustomerManager.GetAllCustomers();
+                if (customers == null)
+                    return NotFound();
+
+                return Ok(customers);
             }
             catch (Exception ex)
             {
-                return StatusCode(500);
-                // throw new CustomerException("CustomerController: GetAllCustomers", ex);
+                return StatusCode(500, "An unexpected error occurred: " + ex);
             }
         }
+
 
         [HttpGet("{id}", Name = "GetCustomerById")]
         public ActionResult<Customer> GetAction(int id)
@@ -47,13 +51,12 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500);
-                //throw new CustomerException("CustomerController: GetCustomerById", ex);
+                return StatusCode(500, "An unexpected error occurred: " + ex);
             }
         }
 
         [HttpPost(Name = "AddCustomer")]
-        public ActionResult Add([FromBody] Customer c)
+        public ActionResult Add([FromBody] CustomerDTO c)
         {
             try
             {
@@ -62,40 +65,21 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500);
-                // throw new CustomerException("CustomerController: AddCostumer", ex);
+                return StatusCode(500, "An unexpected error occurred: " + ex);
             }
         }
 
         [HttpPut(Name = "UpdateCustomer")]
-        public ActionResult Put([FromBody] Customer c)
+        public ActionResult Put([FromBody] Customer customer)
         {
             try
             {
-                _CustomerManager.UpdateCustomer(c);
+                _CustomerManager.UpdateCustomer(customer);
                 return Ok();
             }
             catch (Exception ex)
             {
-                return StatusCode(500);
-                // throw new CustomerException("CustomerController: UpdateCustomer", ex);
-            }
-        }
-
-        [HttpDelete("{id}", Name = "DeleteCustomer")]
-        public ActionResult Delete(int id)
-        {
-            try
-            {
-                Customer c = _CustomerManager.GetCustomerById(id);
-                if (c == null) return NotFound();
-                _CustomerManager.RemoveCustomer(c);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500);
-                //throw new CustomerException("CustomerController: DeleteCustomer", ex);
+                return StatusCode(500, "An unexpected error occurred: " + ex);
             }
         }
     }

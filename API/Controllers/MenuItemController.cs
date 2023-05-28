@@ -1,5 +1,7 @@
-﻿using BusinessLayer.Managers;
+﻿using BusinessLayer.DTOS;
+using BusinessLayer.Managers;
 using BusinessLayer.Model;
+using DataLayer.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -9,11 +11,15 @@ namespace API.Controllers
     public class MenuItemController : Controller
     {
         private readonly ILogger<MenuItemController> logger;
+        private IConfiguration iConfig;
         private MenuItemManager _MenuItemManager;
 
-        public MenuItemController(ILogger<MenuItemController> logger)
+        public MenuItemController(ILogger<MenuItemController> logger, IConfiguration iConfig)
         {
             this.logger = logger;
+            this.iConfig = iConfig;
+            _MenuItemManager = new MenuItemManager(new MenuItemRepository(iConfig.GetValue<string>("ConnectionStrings:database")));
+
         }
 
         [HttpGet(Name = "GetAllMenuItems")]
@@ -27,8 +33,7 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500);
-                // throw new MenuItemException("MenuItemController: GetAllMenuItems", ex);
+                return StatusCode(500, "An unexpected error occurred: " + ex);
             }
         }
 
@@ -43,13 +48,12 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500);
-                //throw new MenuItemException("MenuItemController: GetMenuItemById", ex);
+                return StatusCode(500, "An unexpected error occurred: " + ex);
             }
         }
 
         [HttpPost(Name = "AddMenuItem")]
-        public ActionResult Add([FromBody] MenuItem mi)
+        public ActionResult Add([FromBody] MenuItemDTO mi)
         {
             try
             {
@@ -58,8 +62,7 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500);
-                // throw new MenuItemException("MenuItemController: AddMenuItem", ex);
+                return StatusCode(500, "An unexpected error occurred: " + ex);
             }
         }
 
@@ -73,25 +76,7 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500);
-                // throw new MenuItemException("MenuItemController: UpdateMenuItem", ex);
-            }
-        }
-
-        [HttpDelete("{id}", Name = "DeleteMenuItem")]
-        public ActionResult Delete(int id)
-        {
-            try
-            {
-                MenuItem mi = _MenuItemManager.GetMenuItemById(id);
-                if (mi == null) return NotFound();
-                _MenuItemManager.RemoveMenuItem(mi);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500);
-                //throw new MenuItemException("MenuItemController: DeleteMenuItem", ex);
+                return StatusCode(500, "An unexpected error occurred: " + ex);
             }
         }
     }

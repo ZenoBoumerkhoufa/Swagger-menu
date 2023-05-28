@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\boume\\OneDrive\\Documenten\\HOGENT\\Jaar_3\\Web 4\\EINDOPDRACHT\\Swagger-menu\\DataLayer\\DataLayer.csproj": {}
+    "C:\\Users\\boume\\OneDrive\\Bureaublad\\Swagger-menu\\DataLayer\\DataLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\boume\\OneDrive\\Documenten\\HOGENT\\Jaar_3\\Web 4\\EINDOPDRACHT\\Swagger-menu\\BusinessLayer\\BusinessLayer.csproj": {
+    "C:\\Users\\boume\\OneDrive\\Bureaublad\\Swagger-menu\\BusinessLayer\\BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\boume\\OneDrive\\Documenten\\HOGENT\\Jaar_3\\Web 4\\EINDOPDRACHT\\Swagger-menu\\BusinessLayer\\BusinessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\boume\\OneDrive\\Bureaublad\\Swagger-menu\\BusinessLayer\\BusinessLayer.csproj",
         "projectName": "BusinessLayer",
-        "projectPath": "C:\\Users\\boume\\OneDrive\\Documenten\\HOGENT\\Jaar_3\\Web 4\\EINDOPDRACHT\\Swagger-menu\\BusinessLayer\\BusinessLayer.csproj",
+        "projectPath": "C:\\Users\\boume\\OneDrive\\Bureaublad\\Swagger-menu\\BusinessLayer\\BusinessLayer.csproj",
         "packagesPath": "C:\\Users\\boume\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\boume\\OneDrive\\Documenten\\HOGENT\\Jaar_3\\Web 4\\EINDOPDRACHT\\Swagger-menu\\BusinessLayer\\obj\\",
+        "outputPath": "C:\\Users\\boume\\OneDrive\\Bureaublad\\Swagger-menu\\BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -60,18 +60,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\boume\\OneDrive\\Documenten\\HOGENT\\Jaar_3\\Web 4\\EINDOPDRACHT\\Swagger-menu\\DataLayer\\DataLayer.csproj": {
+    "C:\\Users\\boume\\OneDrive\\Bureaublad\\Swagger-menu\\DataLayer\\DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\boume\\OneDrive\\Documenten\\HOGENT\\Jaar_3\\Web 4\\EINDOPDRACHT\\Swagger-menu\\DataLayer\\DataLayer.csproj",
+        "projectUniqueName": "C:\\Users\\boume\\OneDrive\\Bureaublad\\Swagger-menu\\DataLayer\\DataLayer.csproj",
         "projectName": "DataLayer",
-        "projectPath": "C:\\Users\\boume\\OneDrive\\Documenten\\HOGENT\\Jaar_3\\Web 4\\EINDOPDRACHT\\Swagger-menu\\DataLayer\\DataLayer.csproj",
+        "projectPath": "C:\\Users\\boume\\OneDrive\\Bureaublad\\Swagger-menu\\DataLayer\\DataLayer.csproj",
         "packagesPath": "C:\\Users\\boume\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\boume\\OneDrive\\Documenten\\HOGENT\\Jaar_3\\Web 4\\EINDOPDRACHT\\Swagger-menu\\DataLayer\\obj\\",
+        "outputPath": "C:\\Users\\boume\\OneDrive\\Bureaublad\\Swagger-menu\\DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -93,8 +93,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\boume\\OneDrive\\Documenten\\HOGENT\\Jaar_3\\Web 4\\EINDOPDRACHT\\Swagger-menu\\BusinessLayer\\BusinessLayer.csproj": {
-                "projectPath": "C:\\Users\\boume\\OneDrive\\Documenten\\HOGENT\\Jaar_3\\Web 4\\EINDOPDRACHT\\Swagger-menu\\BusinessLayer\\BusinessLayer.csproj"
+              "C:\\Users\\boume\\OneDrive\\Bureaublad\\Swagger-menu\\BusinessLayer\\BusinessLayer.csproj": {
+                "projectPath": "C:\\Users\\boume\\OneDrive\\Bureaublad\\Swagger-menu\\BusinessLayer\\BusinessLayer.csproj"
               }
             }
           }
@@ -112,6 +112,10 @@
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.33, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
             }
           },
           "imports": [
@@ -130,7 +134,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

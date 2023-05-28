@@ -1,4 +1,6 @@
-﻿using BusinessLayer.Interfaces;
+﻿using BusinessLayer.DTOS;
+using BusinessLayer.Interfaces;
+using BusinessLayer.Mappers;
 using BusinessLayer.Model;
 using System;
 using System.Collections.Generic;
@@ -32,9 +34,9 @@ namespace BusinessLayer.Managers
         #endregion
 
         #region ADD
-        public void AddOrder(Order order)
+        public void AddOrder(OrderDTO order)
         {
-            _repo.AddOrder(order);
+            _repo.AddOrder(OrderMapper.MapToEntity(order));
         }
         #endregion
 
@@ -42,13 +44,6 @@ namespace BusinessLayer.Managers
         public void UpdateOrder(Order order)
         {
             _repo.UpdateOrder(order);
-        }
-        #endregion
-
-        #region DELETE
-        public void RemoveOrder(Order order)
-        {
-            _repo.RemoveOrder(order);
         }
         #endregion
     }

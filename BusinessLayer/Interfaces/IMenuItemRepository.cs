@@ -13,6 +13,5 @@ namespace BusinessLayer.Interfaces
         MenuItem GetMenuItemById(int id);
         void AddMenuItem(MenuItem menuItem);
         void UpdateMenuItem(MenuItem menuItem);
-        void RemoveMenuItem(MenuItem menuItem);
     }
 }

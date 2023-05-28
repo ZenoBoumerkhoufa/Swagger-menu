@@ -13,6 +13,5 @@ namespace BusinessLayer.Interfaces
         Order GetOrderById(int id);
         void AddOrder(Order order);
         void UpdateOrder(Order order);
-        void RemoveOrder(Order order);
     }
 }

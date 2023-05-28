@@ -1,4 +1,6 @@
-﻿using BusinessLayer.Interfaces;
+﻿using BusinessLayer.DTOS;
+using BusinessLayer.Interfaces;
+using BusinessLayer.Mappers;
 using BusinessLayer.Model;
 using System;
 using System.Collections.Generic;
@@ -32,9 +34,9 @@ namespace BusinessLayer.Managers
         }
         #endregion
         #region ADD
-        public void AddMenuItem(MenuItem item)
+        public void AddMenuItem(MenuItemDTO item)
         {
-            _repo.AddMenuItem(item);
+            _repo.AddMenuItem(MenuItemMapper.MapToEntity(item));
         }
         #endregion
 
@@ -42,13 +44,6 @@ namespace BusinessLayer.Managers
         public void UpdateMenuItem(MenuItem item)
         {
             _repo.UpdateMenuItem(item);
-        }
-        #endregion
-
-        #region DELETE
-        public void RemoveMenuItem(MenuItem item)
-        {
-            _repo.RemoveMenuItem(item);
         }
         #endregion
     }

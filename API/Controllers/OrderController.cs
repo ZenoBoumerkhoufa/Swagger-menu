@@ -1,5 +1,7 @@
-﻿using BusinessLayer.Managers;
+﻿using BusinessLayer.DTOS;
+using BusinessLayer.Managers;
 using BusinessLayer.Model;
+using DataLayer.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -9,11 +11,14 @@ namespace API.Controllers
     public class OrderController : Controller
     {
         private readonly ILogger<OrderController> logger;
+        private IConfiguration iConfig;
         private OrderManager _OrderManager;
 
-        public OrderController(ILogger<OrderController> logger)
+        public OrderController(ILogger<OrderController> logger, IConfiguration iconfig)
         {
             this.logger = logger;
+            this.iConfig = iconfig;
+            _OrderManager = new OrderManager(new OrderRepository(iConfig.GetValue<string>("ConnectionStrings:database")));
         }
 
         [HttpGet(Name = "GetAllOrders")]
@@ -27,8 +32,7 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500);
-                // throw new OrderException("OrderController: GetAllOrders", ex);
+                return StatusCode(500, "An unexpected error occurred: " + ex);
             }
         }
 
@@ -43,13 +47,12 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500);
-                //throw new OrderException("OrderController: GetOrderById", ex);
+                return StatusCode(500, "An unexpected error occurred: " + ex);
             }
         }
 
         [HttpPost(Name = "AddOrder")]
-        public ActionResult Add([FromBody] Order o)
+        public ActionResult Add([FromBody] OrderDTO o)
         {
             try
             {
@@ -58,8 +61,7 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500);
-                // throw new OrderException("OrderController: AddOrder", ex);
+                return StatusCode(500, "An unexpected error occurred: " + ex);
             }
         }
 
@@ -73,25 +75,7 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500);
-                // throw new OrderException("OrderController: UpdateOrder", ex);
-            }
-        }
-
-        [HttpDelete("{id}", Name = "DeleteOrder")]
-        public ActionResult Delete(int id)
-        {
-            try
-            {
-                Order o = _OrderManager.GetOrderById(id);
-                if (o == null) return NotFound();
-                _OrderManager.RemoveOrder(o);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500);
-                //throw new OrderException("OrderController: DeleteOrder", ex);
+                return StatusCode(500, "An unexpected error occurred: " + ex);
             }
         }
     }

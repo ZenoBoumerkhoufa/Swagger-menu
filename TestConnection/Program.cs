@@ -1,24 +1,25 @@
-﻿using MySql.Data.MySqlClient;
+﻿using System;
+using System.Data.SqlClient;
 
 class Program
 {
     static void Main()
     {
-        string connectionString = "Server=localhost:3306;Database=db_swagger_menu;Uid=root;Pwd=Root123;";
+        string connectionString = "Server=ZENO-LAPTOP\\SQLEXPRESS;Database=db_swagger_menu;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
-        try
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
         {
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            try
             {
                 connection.Open();
                 Console.WriteLine("Connection successful!");
                 // Perform additional database operations if needed
-                connection.Close();
             }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Connection failed: " + ex.Message);
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
         }
 
         Console.ReadLine();

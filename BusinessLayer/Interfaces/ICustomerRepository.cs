@@ -13,6 +13,5 @@ namespace BusinessLayer.Interfaces
         Customer GetCustomerById(int id);
         void AddCustomer(Customer customer);
         void UpdateCustomer(Customer customer);
-        void RemoveCustomer(Customer customer);
     }
 }
