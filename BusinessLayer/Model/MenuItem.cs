@@ -1,16 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.Model
 {
     public class MenuItem
     {
-        public int id { get; private set; }
-        public string name { get; set; }
-        public string description { get; set; }
-        public string price { get; set; }
+        public int Id { get; private set; }
+        public string Naam { get; set; }
+        public string Beschrijving { get; set; }
+        public decimal Prijs { get; set; }
+        public int Voorraad { get; set; }
+
+        public MenuItem(string naam, string beschrijving, decimal prijs, int voorraad)
+        {
+            Naam = naam;
+            Beschrijving = beschrijving;
+            Prijs = prijs;
+            Voorraad = voorraad;
+        }
     }
 }

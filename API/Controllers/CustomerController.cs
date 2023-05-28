@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Managers;
 using BusinessLayer.Model;
+using DataLayer.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -9,11 +10,14 @@ namespace API.Controllers
     public class CustomerController : Controller
     {
         private readonly ILogger<CustomerController> logger;
+        private IConfiguration iConfig;
         private CustomerManager _CustomerManager;
 
-        public CustomerController(ILogger<CustomerController> logger)
+        public CustomerController(ILogger<CustomerController> logger, IConfiguration iconfig)
         {
             this.logger = logger;
+            this.iConfig = iconfig;
+            _CustomerManager = new CustomerManager(new CustomerRepository(iConfig.GetValue<string>("ConnectionStrings:database")));
         }
 
         [HttpGet(Name = "GetAllCustomers")]

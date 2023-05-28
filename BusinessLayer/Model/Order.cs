@@ -1,21 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.Model
 {
     public class Order
     {
-        public int id { get; private set; }
-        public Customer customer { get; set; }
-        public Dictionary<MenuItem, int> items { get; set; } //menuitem, aantal
+        public int Id { get; private set; }
+        public int CustomerId { get; set; }
+        public Dictionary<MenuItem, int> Items { get; set; } // MenuItem, aantal
+        public DateTime OrderPlaatsing { get; private set; }
+        public DateTime OrderBetaling { get; private set; }
 
-        public Order(Customer customer, Dictionary<MenuItem, int> items)
+        public Order(int customerId, Dictionary<MenuItem, int> items, DateTime orderPlaatsing, DateTime orderBetaling)
         {
-            this.customer = customer;
-            this.items = items;
+            CustomerId = customerId;
+            Items = items;
+            OrderPlaatsing = orderPlaatsing;
+            OrderBetaling = orderBetaling;
         }
     }
 }
