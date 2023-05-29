@@ -32,10 +32,10 @@ namespace BusinessLayer.Model
             Voorraad = voorraad;
         }
 
-        public MenuItem(int menuItemId, string menuItemName)
+        public MenuItem(int id, string naam)
         {
-            this.menuItemId = menuItemId;
-            this.menuItemName = menuItemName;
+            Id = id;
+            Naam = naam;
         }
     }
 }

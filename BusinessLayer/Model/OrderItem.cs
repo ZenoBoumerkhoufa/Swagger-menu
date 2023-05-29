@@ -8,14 +8,14 @@ namespace BusinessLayer.Model
 {
     public class OrderItem
     {
-        public MenuItem MenuItem { get; set; }
+        public int MenuItemId { get; set; }
         public int Aantal { get; set; }
 
         public OrderItem() { }
 
-        public OrderItem(MenuItem menuItem, int quantity)
+        public OrderItem(int menuItemId, int quantity)
         {
-            MenuItem = menuItem;
+            MenuItemId = menuItemId;
             Aantal = quantity;
         }
     }

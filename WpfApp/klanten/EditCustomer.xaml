@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfApp.klanten.EditCustomer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp.klanten"
+        mc:Ignorable="d"
+        Title="EditCustomer" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="btn_terug" Content="Terug" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="35" Width="69" Click="btn_terug_Click"/>
+        <Button x:Name="btn_aanpassen" Content="Aanpassen" HorizontalAlignment="Left" Margin="721,389,0,0" VerticalAlignment="Top" Height="35" Width="69" Click="btn_aanpassen_Click" />
+        <Label x:Name="lbl_voornaam" Content="Voornaam:" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_achternaam" Content="Achternaam:" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_straat" Content="Straat:" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_huisnummer" Content="Huisnummer:" HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_busnummer" Content="Busnummer:" HorizontalAlignment="Left" Margin="320,200,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_stad" Content="Stad" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_postcode" Content="Postcode: " HorizontalAlignment="Left" Height="26" Margin="320,240,0,0" VerticalAlignment="Top" Width="64"/>
+        <Label x:Name="lbl_land" Content="Land: " HorizontalAlignment="Left" Margin="560,240,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_telefoonnummer" Content="Telefoonnummer:" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_email" Content="Email: " HorizontalAlignment="Left" Margin="320,280,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_paswoord" Content="Paswoord:" HorizontalAlignment="Left" Margin="10,320,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txt_voornaam" HorizontalAlignment="Left" Margin="150,88,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txt_achternaam" HorizontalAlignment="Left" Margin="150,128,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txt_straat" HorizontalAlignment="Left" Margin="150,168,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txt_huisnummer" HorizontalAlignment="Left" Margin="150,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120"/>
+        <TextBox x:Name="txt_stad" HorizontalAlignment="Left" Margin="150,248,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txt_telefoonnummer" HorizontalAlignment="Left" Margin="150,288,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txt_busnummer" HorizontalAlignment="Left" Margin="420,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120"/>
+        <TextBox x:Name="txt_postcode" HorizontalAlignment="Left" Margin="420,248,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txt_email" HorizontalAlignment="Left" Margin="420,288,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txt_land" HorizontalAlignment="Left" Margin="636,248,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="pwb_paswoord" HorizontalAlignment="Left" Margin="150,328,0,0" VerticalAlignment="Top" Width="120"/>
+    </Grid>
+</Window>

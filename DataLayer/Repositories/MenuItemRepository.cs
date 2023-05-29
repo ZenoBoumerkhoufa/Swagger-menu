@@ -128,7 +128,7 @@ namespace DataLayer.Repositories
                 {
                     conn.Open();
 
-                    cmd = new SqlCommand("UPDATE MenuItem SET Naam=@naam, Beschrijving=@beschrijving, Prijs=@prijs, Voorraad=@voorraad WHERE Id=@id;", conn);
+                    cmd = new SqlCommand("UPDATE MenuItems SET Naam=@naam, Beschrijving=@beschrijving, Prijs=@prijs, Voorraad=@voorraad WHERE Id=@id;", conn);
 
                     cmd.Parameters.AddWithValue("@id", menuItem.Id);
                     cmd.Parameters.AddWithValue("@naam", menuItem.Naam);

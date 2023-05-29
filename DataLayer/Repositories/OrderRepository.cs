@@ -49,7 +49,7 @@ namespace DataLayer.Repositories
                             using (SqlCommand itemCmd = new SqlCommand("INSERT INTO OrderItem (OrderId, MenuItemId, Aantal) VALUES (@OrderId, @MenuItemId, @Aantal)", conn))
                             {
                                 itemCmd.Parameters.AddWithValue("@OrderId", orderId);
-                                itemCmd.Parameters.AddWithValue("@MenuItemId", item.MenuItem.Id);
+                                itemCmd.Parameters.AddWithValue("@MenuItemId", item.MenuItemId);
                                 itemCmd.Parameters.AddWithValue("@Aantal", item.Aantal);
 
                                 itemCmd.ExecuteNonQuery();
@@ -96,7 +96,7 @@ namespace DataLayer.Repositories
 
                                 int aantal = reader.GetInt32(reader.GetOrdinal("Aantal"));
 
-                                OrderItem orderItem = new OrderItem(menuItem, aantal);
+                                OrderItem orderItem = new OrderItem(menuItem.Id, aantal);
 
                                 // Check if the order already exists in the list
                                 Order existingOrder = orders.FirstOrDefault(o => o.Id == orderId);
@@ -163,7 +163,7 @@ namespace DataLayer.Repositories
 
                                 int aantal = reader.GetInt32(reader.GetOrdinal("Aantal"));
 
-                                OrderItem orderItem = new OrderItem(menuItem, aantal);
+                                OrderItem orderItem = new OrderItem(menuItem.Id, aantal);
 
                                 order.Items.Add(orderItem);
                             }
@@ -216,7 +216,7 @@ namespace DataLayer.Repositories
                             using (SqlCommand insertOrderItemCmd = new SqlCommand("INSERT INTO OrderItem (OrderId, MenuItemId, Aantal) VALUES (@OrderId, @MenuItemId, @Aantal);", conn, transaction))
                             {
                                 insertOrderItemCmd.Parameters.AddWithValue("@OrderId", order.Id);
-                                insertOrderItemCmd.Parameters.AddWithValue("@MenuItemId", orderItem.MenuItem.Id);
+                                insertOrderItemCmd.Parameters.AddWithValue("@MenuItemId", orderItem.MenuItemId);
                                 insertOrderItemCmd.Parameters.AddWithValue("@Aantal", orderItem.Aantal);
 
                                 insertOrderItemCmd.ExecuteNonQuery();
