@@ -117,7 +117,7 @@ namespace WpfApp.Bestellingen {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WpfApp;component/bestellingen/editorder.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WpfApp;V1.0.0.0;component/bestellingen/editorder.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Bestellingen\EditOrder.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

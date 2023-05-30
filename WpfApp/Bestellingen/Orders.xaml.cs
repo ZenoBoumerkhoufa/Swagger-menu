@@ -67,5 +67,12 @@ namespace WpfApp.Bestellingen
             ec.Show();
             this.Close();
         }
+
+        private void btn_toevoegen_Click(object sender, RoutedEventArgs e)
+        {
+            AddOrders ao = new AddOrders();
+            ao.Show();
+            this.Close();
+        }
     }
 }

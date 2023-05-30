@@ -245,7 +245,7 @@ namespace WpfApp.klanten {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WpfApp;component/klanten/editcustomer.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WpfApp;V1.0.0.0;component/klanten/editcustomer.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\klanten\EditCustomer.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

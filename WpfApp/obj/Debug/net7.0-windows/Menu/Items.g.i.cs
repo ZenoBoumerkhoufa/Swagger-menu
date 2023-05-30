@@ -77,7 +77,7 @@ namespace WpfApp.Menu {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WpfApp;component/menu/items.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WpfApp;V1.0.0.0;component/menu/items.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Menu\Items.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
