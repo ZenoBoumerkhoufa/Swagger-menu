@@ -7,7 +7,27 @@
         mc:Ignorable="d"
         Title="Orders" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dg_orders" HorizontalAlignment="Center" Height="207" Margin="0,217,0,0" VerticalAlignment="Top" Width="780" d:ItemsSource="{d:SampleData ItemCount=5}" MouseDoubleClick="dg_Order_DoubleClicked"/>
+        <TreeView x:Name="treeViewOrders" Margin="10,100,10,10" SelectedItemChanged="treeViewOrders_SelectedItemChanged">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding Items}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Order ID: " />
+                        <TextBlock Text="{Binding Id}" FontWeight="Bold" />
+                    </StackPanel>
+                    <HierarchicalDataTemplate.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="MenuItem ID: " />
+                                <TextBlock Text="{Binding MenuItemId}" />
+                                <TextBlock Text="Quantity: " Margin="10,0,0,0" />
+                                <TextBlock Text="{Binding Aantal}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </HierarchicalDataTemplate.ItemTemplate>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+
         <Button x:Name="btn_terug" Content="Terug" HorizontalAlignment="Left" Height="35" Margin="10,10,0,0" VerticalAlignment="Top" Width="69" Click="Button_Click"/>
         <Button x:Name="btn_toevoegen" Content="Toevoegen" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Width="69" Height="35" Click="btn_toevoegen_Click"/>
     </Grid>

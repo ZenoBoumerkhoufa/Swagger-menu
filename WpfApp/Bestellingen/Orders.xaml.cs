@@ -2,31 +2,21 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using WpfApp.klanten;
 
 namespace WpfApp.Bestellingen
 {
-    /// <summary>
-    /// Interaction logic for Orders.xaml
-    /// </summary>
     public partial class Orders : Window
     {
         private const string apiUrl = "https://localhost:7138/api/Orders";
+
+        public List<Order> orderList { get; set; }
+
         public Orders()
         {
             InitializeComponent();
+            DataContext = this;
             LoadOrders();
         }
 
@@ -40,8 +30,9 @@ namespace WpfApp.Bestellingen
                     response.EnsureSuccessStatusCode();
 
                     string json = await response.Content.ReadAsStringAsync();
-                    List<Order> it = JsonConvert.DeserializeObject<List<Order>>(json);
-                    dg_orders.ItemsSource = it;
+                    List<Order> orders = JsonConvert.DeserializeObject<List<Order>>(json);
+                    orderList = orders;
+                    treeViewOrders.ItemsSource = orderList;
                 }
             }
             catch (Exception ex)
@@ -54,25 +45,26 @@ namespace WpfApp.Bestellingen
         {
             MainWindow mw = new MainWindow();
             mw.Show();
-            this.Close();
-        }
-
-        private void dg_Order_DoubleClicked(object sender, RoutedEventArgs e)
-        {
-            // Get the selected customer from the DataGrid
-            Order selected = (Order)dg_orders.SelectedItem;
-
-            // Open the new window for editing the customer data
-            EditOrder ec = new EditOrder(selected);
-            ec.Show();
-            this.Close();
+            Close();
         }
 
         private void btn_toevoegen_Click(object sender, RoutedEventArgs e)
         {
             AddOrders ao = new AddOrders();
             ao.Show();
-            this.Close();
+            Close();
+        }
+
+        private void treeViewOrders_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            Order selectedOrder = treeViewOrders.SelectedItem as Order;
+
+            if (selectedOrder != null)
+            {
+                EditOrder editOrderWindow = new EditOrder(selectedOrder);
+                editOrderWindow.Show();
+                this.Close();
+            }
         }
     }
 }
